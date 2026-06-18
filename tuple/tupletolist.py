@@ -1,0 +1,7 @@
+x=(10,20)
+print(x,type(x))
+y=list(x)
+y.append(90)
+print(y,type(y))
+x=tuple(y)
+print(x,type(x)) 
