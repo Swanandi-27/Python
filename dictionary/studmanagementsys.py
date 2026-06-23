@@ -1,12 +1,17 @@
-stud={101:{
-    "name":"swanandi",
-    "age":20,
-    "sub":["math","java","python"],
-    "marks":(98,97,99)
+for key in stud:
+    total = 0
 
-}
-}
+    print("Student ID:", key)
+    print("Name:", stud[key]["name"])
 
+    for v in stud[key]["marks"]:
+        total += v
+
+    print("total marks:", total)
+
+    per = total / len(stud[key]["marks"])
+    print("percentage:", per, "%")
+    print()
 while True:
     print("welcome to student management system")
     print("\n1.add student\n2.view\n3.calculate total,percentage\n4.topper or lower\n5.exit")
@@ -39,23 +44,20 @@ while True:
                 print()
         
         case 3:
-            
-            
-            
             for key in stud:
                 total = 0
 
-                print(key)
-                print(stud[key]["name"])
+                print("Student ID:", key)
+                print("Name:", stud[key]["name"])
 
-            for v in stud[key]["marks"]:
-                total += v
+                for v in stud[key]["marks"]:
+                    total += v
 
-            print("total marks:", total)
+                print("total marks:", total)
 
-            per = total / len(stud[key]["marks"])
-            print(per, "%")
-            print()
+                per = total / len(stud[key]["marks"])
+                print("percentage:", per, "%")
+                print()
             
 
                 
@@ -155,3 +157,4 @@ while True:
             print("Invalid choice")
 
  
+
