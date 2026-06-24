@@ -12,7 +12,7 @@ x={10,20}
 print(type(x))
 
 #user input in set
-x=set()
+x=set()  #to create empty set
 x.add(10)
 print(x)
 print()
