@@ -95,56 +95,17 @@ while True:
 
             print("\n========== FINAL BILL ==========")
 
-            for i in item:
-                print(f"Product : {i[0]}")
-                print(f"Brand   : {i[1]}")
-                print(f"Qty     : {i[2]}")
-                print(f"Price   : {i[3]}")
-                print(f"Total   : {i[4]}")
+            for item in item:
+                print(f"Product : {name}")
+                print(f"Brand   : {brand}")
+                print(f"Qty     : {qty}")
+                print(f"Price   : {item[3]}")
+                print(f"Total   : {item[4]}")
                 print("--------------------------")
 
             print(f"Grand Total = {final_total}")
             print("===============================")
-            pdf = FPDF()
-            pdf.add_page()
-            pdf.set_font("Arial", size=12)
-            pdf.cell(200,10,txt="shopping bill",ln=True,align="c")
-            pdf.ln(10)
-            for i in item:
-                pdf.cell(200,10,txt=f"product:{i[0]}",ln=True)
-                pdf.cell(200,10,txt=f"Brand:{i[1]}",ln=True)
-                pdf.cell(200,10,txt=f"Quantity:{i[2]}",ln=True)
-                pdf.cell(200,10,txt=f"Price:{i[3]}",ln=True)
-                pdf.cell(200,10,txt=f"Total:{i[4]}",ln=True)
-                pdf.cell(200,10,txt="---------------------",ln=True)
-
-            pdf.cell(200,10,txt=f"Grand total:{final_total}",ln=True)
-            pdf.output("bill.pdf")
-            print("pdf created sucessfully")
-
-            receiver = input("Enter buyer email: ")
-
-            sender = "kachiswanandi@gmail.com"
-            password = "zlfh nuyp ujho pbfn"
-
-            msg = EmailMessage()
-            msg["Subject"] = "Your Bill"
-            msg["From"] = sender
-            msg["To"] = receiver
-            msg.set_content("Your bill is attached.")
-
-            with open("bill.pdf", "rb") as f:
-                file_data = f.read()
-
-            msg.add_attachment(file_data, maintype="application", subtype="pdf", filename="bill.pdf")
-
-            server = smtplib.SMTP("smtp.gmail.com", 587)
-            server.starttls()
-            server.login(sender, password)
-            server.send_message(msg)
-            server.quit()
-
-            print("Bill sent successfully")
+            
 
 
 
@@ -171,20 +132,3 @@ while True:
 
 
 
-#hw 
-#class product
-#       name,brand,mfg,exp,qty,price
-# operations - 1) all detailes 
-#              2)search
-#                       1)brand
-#                       2)name
-#                       3)price
-#  acording to brand name ex"suhaha" show all suhana products 
-
-#purchase -->generate bill 
-#then after bill generation qty will automatically get updated
-
-
-#hw 
-#try to download the bill with .pdf extension
-#send the bill pdf to user email
