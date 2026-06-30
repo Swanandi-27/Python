@@ -25,7 +25,7 @@ while True:
             for i in y:
                 print(f"name:{i.name}\nbrand:{i.brand}\nMFG:{i.mfg}\nEXP:{i.exp}\nQty:{i.qty}\nPrice:{i.price}")
                 print("=========================================")
-        case 2:
+        case 2: 
             print("\n1.brand\n2.name\n")
             ch=int(input("enter your choice:"))
             match ch:
