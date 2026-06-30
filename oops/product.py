@@ -49,6 +49,7 @@ while True:
                             print("===============================")
                     if found==False:
                         print("product  not found")
+                        print()
                             
                 
 
